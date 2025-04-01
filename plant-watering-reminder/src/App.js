@@ -108,24 +108,43 @@ function App() {
         sx={{
           minHeight: '100vh',
           backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url(${PlantsImg})`,
-          backgroundSize: '600px 300px',
+          backgroundSize: { xs: '300px 150px', sm: '400px 200px', md: '600px 300px' },
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed',
           backgroundRepeat: 'repeat',
+          paddingBottom: 'env(safe-area-inset-bottom)' // For mobile devices with notches
         }}
       >
         <AppBar position="static" color="primary" elevation={0}>
           <Toolbar>
-            <LocalFlorist sx={{ mr: 2 }} />
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              Recordatorio de regada de plantas
+            <LocalFlorist sx={{ mr: { xs: 1, sm: 2 } }} />
+            <Typography 
+              variant="h6" 
+              component="div" 
+              sx={{ 
+                flexGrow: 1,
+                fontSize: { xs: '1rem', sm: '1.25rem', md: '1.5rem' }
+              }}
+            >
+              Recordatorio de regada
             </Typography>
             <Button 
               color="inherit" 
               startIcon={<Add />}
               onClick={() => setShowAddModal(true)}
+              size="small"
+              sx={{ 
+                '& .MuiButton-startIcon': { 
+                  marginRight: { xs: 0, sm: 1 } 
+                } 
+              }}
             >
-              Agregar nueva planta
+              <Box component="span" sx={{ display: { xs: 'none', sm: 'inline' } }}>
+                Agregar nueva planta
+              </Box>
+              <Box component="span" sx={{ display: { xs: 'inline', sm: 'none' } }}>
+                Agregar
+              </Box>
             </Button>
           </Toolbar>
         </AppBar>

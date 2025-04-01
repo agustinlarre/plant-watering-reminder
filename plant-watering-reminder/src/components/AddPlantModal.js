@@ -87,7 +87,7 @@ function AddPlantModal({ open, onClose, onAddPlant }) {
                 />
                 </Button>
             </Grid>
-            <Grid item xs={12}>
+            <Grid size={{ xs: 12, md: 6 }}>
                 <TextField
                 fullWidth
                 label="Nombre de la planta"
@@ -102,7 +102,7 @@ function AddPlantModal({ open, onClose, onAddPlant }) {
                 }}
                 />
             </Grid>
-            <Grid item xs={6}>
+            <Grid size={{ xs: 12, md: 6 }}>
                 <TextField
                 fullWidth
                 label="Frecuencia de regada"
@@ -121,7 +121,7 @@ function AddPlantModal({ open, onClose, onAddPlant }) {
                 }}
                 />
             </Grid>
-            <Grid item xs={6}>
+            <Grid size={{ xs: 12, md: 6 }}>
                 <TextField
                 fullWidth
                 label="Última regada"
