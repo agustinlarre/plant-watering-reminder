@@ -1,0 +1,115 @@
+.app {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.add-plant {
+  background: #f0f0f0;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.add-plant input, .add-plant label {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.plant-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.plant {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.plants-main-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.plant.needs-water {
+  border-left: 5px solid #ff6b6b;
+}
+
+.app-title {
+  text-align: center;
+}
+
+.alert {
+  color: #ff6b6b;
+  font-weight: bold;
+}
+
+button {
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background: #45a049;
+}
+
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #f00;
+  opacity: 0.7;
+  animation: confettiFall 3s ease-in-out forwards;
+}
+
+@keyframes confettiFall {
+  0% {
+    transform: translateY(-100px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(1000px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.plant-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.delete-button {
+  background-color: #ff6b6b !important;
+}
+
+.delete-button:hover {
+  background-color: #ff5252 !important;
+}
+
+.water-button {
+  background-color: #4caf50 !important;
+}
+
+.water-button:hover {
+  background-color: #45a049 !important;
+}
+
+.main-background {
+  width: 100vw;
+  height: 10vw;
+  position: relative;
+  background-image: url("./assets/images/Plants.png");
+  background-size: contain;
+}

@@ -1,0 +1,169 @@
+@import '../styles/Modals.css';
+
+.delete-confirmation-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.delete-confirmation-modal {
+  background-color: white;
+  padding: 25px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  animation: modalAppear 0.3s ease-out;
+}
+
+@keyframes modalAppear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+  
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+  }
+
+  .confirmation-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+  }
+  
+  .plant-image-preview {
+    text-align: center;
+    margin: 15px 0;
+  }
+  
+  .sad-plant-image {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    filter: grayscale(30%) brightness(0.9);
+    transform: rotate(-5deg);
+    animation: droop 0.5s ease-in-out;
+  }
+  
+  @keyframes droop {
+    0% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(-10deg) scale(0.95); }
+    100% { transform: rotate(-5deg) scale(1); }
+  }
+  
+  .modal-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .cancel-button {
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s ease;
+  }
+  
+  .cancel-button:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .confirm-button {
+    background-color: #ff6b6b;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s ease;
+  }
+  
+  .confirm-button:hover {
+    background-color: #ff5252;
+  }
+
+  .rain-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 1001;
+  }
+  
+  .raindrop {
+    position: absolute;
+    top: -10px;
+    width: 2px;
+    height: 15px;
+    background: linear-gradient(to bottom, transparent, rgba(174, 194, 224, 0.6));
+    border-radius: 0 0 5px 5px;
+    animation: falling linear infinite;
+  }
+  
+  @keyframes falling {
+    0% {
+      transform: translateY(-10px);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh);
+      opacity: 0;
+    }
+  }
+  
+  /* Make sure modal is above rain */
+  .delete-confirmation-modal {
+    position: relative;
+    z-index: 1002;
+  }
+  
+  /* Enhance sad plant image */
+  .sad-plant-image {
+    filter: grayscale(50%) brightness(0.8);
+    animation: plantDroop 2s ease-in-out infinite alternate;
+  }
+  
+  @keyframes plantDroop {
+    0% {
+      transform: rotate(-5deg);
+    }
+    100% {
+      transform: rotate(5deg);
+    }
+  }
